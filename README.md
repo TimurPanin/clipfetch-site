@@ -1,4 +1,4 @@
-# ClipFetch — Telegram-бот для скачивания TikTok и YouTube Shorts
+# ClipFetch - Telegram-бот для скачивания TikTok и YouTube Shorts
 
 **Лендинг проекта**. Открой бота: **[t.me/clipfetch_O1337_bot](https://t.me/clipfetch_O1337_bot)**  
 
