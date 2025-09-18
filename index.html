@@ -187,7 +187,51 @@
         <div class="muted">Да. Бот бесплатен для пользователей. Вы можете поддержать проект, распространяя ссылку на бота.</div>
       </details>
     </section>
+<section id="faq-audio" class="faq">
+  <h2>Вопросы и ответы: аудио-скачивание</h2>
 
+  <details>
+    <summary>Что означает «⚡ Авто (m4a/aac)»?</summary>
+    <p>Бот скачивает <strong>лучшую доступную аудиодорожку без перекодирования</strong>. Обычно это AAC в контейнере <strong>M4A</strong>. Быстро и без потерь. Если у источника нет AAC (например, выдаётся Opus/WEBM), итоговый файл может быть <code>.webm</code> - это нормально.</p>
+  </details>
+
+  <details>
+    <summary>Чем отличаются MP3 320 / 256 / 192 / 128 / 96?</summary>
+    <p>Это <strong>битрейт MP3</strong> (кбит/с). При выборе MP3 бот всегда <strong>перекодирует</strong> аудио под указанный битрейт.</p>
+    <ul>
+      <li>320 kbps ≈ <strong>2.4 МБ/мин</strong> - максимум качества (музыка/архив).</li>
+      <li>256 kbps ≈ <strong>1.9 МБ/мин</strong> - почти как 320, но компактнее.</li>
+      <li>192 kbps ≈ <strong>1.4 МБ/мин</strong> - оптимальный баланс для музыки.</li>
+      <li>128 kbps ≈ <strong>1.0 МБ/мин</strong> - удобно для речи/подкастов.</li>
+      <li>96 kbps ≈ <strong>0.7 МБ/мин</strong> - экономия трафика для речи.</li>
+    </ul>
+  </details>
+
+  <details>
+    <summary>Что выбрать?</summary>
+    <ul>
+      <li><strong>Быстро и без потерь</strong> - «Авто (m4a/aac)».</li>
+      <li><strong>Играть везде</strong> - MP3 192 или MP3 256.</li>
+      <li><strong>Максимум качества в MP3</strong> - MP3 320.</li>
+      <li><strong>Экономия места</strong> - MP3 128 или MP3 96.</li>
+    </ul>
+  </details>
+
+  <details>
+    <summary>Почему иногда приходит файл .webm?</summary>
+    <p>У некоторых роликов оригинальная аудиодорожка - <strong>Opus в WEBM</strong>. Это не ошибка. Хотите MP3 - выберите любую кнопку MP3.</p>
+  </details>
+
+  <details>
+    <summary>Меняется ли качество при «Авто»?</summary>
+    <p>Нет. В «Авто» бот старается <strong>не перекодировать</strong>. При выборе MP3 идёт перекодирование под выбранный битрейт.</p>
+  </details>
+
+  <details>
+    <summary>Поддерживаются ли плееры на телефоне?</summary>
+    <p>Да. <strong>M4A (AAC)</strong> и <strong>MP3</strong> воспроизводятся на iOS/Android/Windows/macOS и в Telegram.</p>
+  </details>
+</section>
     <footer>
       <div class="credits">Идея и концепция: <a href="https://t.me/clipfetch_O1337_bot" target="_blank" rel="noopener">Lagoda1337</a></div>
       <div class="lang">
