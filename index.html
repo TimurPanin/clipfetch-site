@@ -68,7 +68,7 @@
 
     .panel { background: linear-gradient(180deg, var(--panel), var(--panel-2)); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 10px 40px rgba(0,0,0,.3); }
     .hero .copy { padding: 26px; }
-    .h1 { font-size: clamp(28px, 4.2vw, 40px); margin: 0 0 10px; }
+    .h1 { font-size: clamp(28px, 4.2vw, 40px); margin: 0 0 10px; line-height: 1.15; letter-spacing: .1px; }
     .sub { color: var(--muted); font-size: 16px; }
 
     .cta-row { display:flex; gap:12px; flex-wrap: wrap; margin-top:18px; }
@@ -78,11 +78,11 @@
     .btn.primary { background: linear-gradient(135deg, #60a5fa, #34d399); color:#051220; }
     .btn.ghost { background: transparent; border:1px solid rgba(255,255,255,.1); color: var(--text); }
 
-    .features { display:grid; grid-template-columns: repeat(3, 1fr); gap:18px; margin-top: 18px; padding: 18px; }
-    @media (max-width: 880px) { .features { grid-template-columns: 1fr; } }
-    .card { padding:18px; border-radius: 12px; border:1px solid var(--border); background: var(--panel-2); }
+    .features { display:grid; grid-template-columns: repeat(3, 1fr); gap:14px; margin-top: 18px; padding: 18px; align-content:stretch; }
+    @media (max-width: 880px) { .features { grid-template-columns: 1fr; padding:14px; gap:12px; } }
+    .card { padding:18px; border-radius: 14px; border:1px solid var(--border); background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.03)); display:flex; flex-direction:column; justify-content:center; min-height:96px; }
     .card h3 { margin:0 0 6px; font-size: 18px; }
-    .muted { color: var(--muted); font-size: 14px; }
+    .muted { color: var(--muted); font-size: 14px; margin:0; }
 
     .how { margin-top: 28px; }
     .how-inner { padding:22px; display:flex; flex-direction:column; align-items:center; text-align:center; }
@@ -91,37 +91,18 @@
     .how ol { margin: 0; padding-left: 18px; }
 
     /* FAQ grids */
-    .faq-title { margin: 28px 0 8px; }
-    .faq-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 8px;
-    }
+    .faq-title { text-align:center; font-weight:800; letter-spacing:.2px; margin:32px 0 10px; }
+    .faq-grid { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap:16px; margin-top:8px; }
     @media (max-width: 900px) { .faq-grid { grid-template-columns: 1fr; } }
 
-    .faq-grid details {
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.04);
-      border-radius: 14px;
-      padding: 0;
-      overflow: hidden;
-      backdrop-filter: saturate(120%) blur(2px);
-    }
-    .faq-grid summary {
-      display: flex; align-items: center; gap: .6rem;
-      padding: .95rem 1.1rem;
-      font-weight: 700; cursor: pointer; list-style: none; position: relative; min-height: 48px;
-    }
+    .faq-grid details { border:1px solid var(--border); background: rgba(255,255,255,.04); border-radius:14px; padding:0; overflow:hidden; backdrop-filter: saturate(120%) blur(2px); }
+    .faq-grid summary { display:flex; align-items:center; gap:.6rem; padding:.95rem 1.1rem; font-weight:700; cursor:pointer; list-style:none; position:relative; min-height:48px; }
     .faq-grid summary::-webkit-details-marker { display:none; }
-    .faq-grid summary::after {
-      content: "▸"; position: absolute; right: 12px; top: 50%;
-      transform: translateY(-50%); opacity: .6; transition: transform .18s ease; font-size: 1rem;
-    }
-    .faq-grid details[open] summary::after { content: "▾"; transform: translateY(-50%); }
-    .faq-grid details > *:not(summary) { padding: 0 1.1rem 1rem 1.1rem; }
-    .faq-grid p, .faq-grid ul { margin: .6rem 0 0; }
-    .faq-grid ul { padding-left: 1.1rem; }
+    .faq-grid summary::after { content:"▸"; position:absolute; right:12px; top:50%; transform:translateY(-50%); opacity:.6; transition:transform .18s ease; font-size:1rem; }
+    .faq-grid details[open] summary::after { content:"▾"; transform:translateY(-50%); }
+    .faq-grid details > *:not(summary) { padding:0 1.1rem 1rem 1.1rem; }
+    .faq-grid p, .faq-grid ul { margin:.6rem 0 0; }
+    .faq-grid ul { padding-left:1.1rem; }
     .faq-grid details:hover { border-color: rgba(255,255,255,.14); }
 
     footer { margin: 36px 0 18px; color: var(--muted); font-size: 13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
@@ -151,7 +132,7 @@
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "ClipFetch — загрузчик TikTok и YouTube Shorts",
+    "name": "ClipFetch - загрузчик TikTok и YouTube Shorts",
     "applicationCategory": "MultimediaApplication",
     "operatingSystem": "Android, iOS, Web",
     "offers": {"@type":"Offer","price":"0","priceCurrency":"USD"},
@@ -159,7 +140,6 @@
     "sameAs": ["https://t.me/clipfetch_O1337_bot"]
   }
   </script>
-
 </head>
 <body>
   <div class="wrap">
@@ -238,7 +218,7 @@
     <div class="faq-grid">
       <details>
         <summary>Что означает «⚡ Авто (m4a/aac)»?</summary>
-        <p>Бот скачивает <strong>лучшую доступную аудиодорожку без перекодирования</strong>. Обычно это AAC в контейнере <strong>M4A</strong>. Быстро и без потерь. Если у источника нет AAC (например, выдаётся Opus/WEBM), итоговый файл может быть <code>.webm</code> — это нормально.</p>
+        <p>Бот скачивает <strong>лучшую доступную аудиодорожку без перекодирования</strong>. Обычно это AAC в контейнере <strong>M4A</strong>. Быстро и без потерь. Если у источника нет AAC (например, выдаётся Opus/WEBM), итоговый файл может быть <code>.webm</code> - это нормально.</p>
       </details>
 
       <details>
@@ -256,16 +236,16 @@
       <details>
         <summary>Что выбрать?</summary>
         <ul>
-          <li><strong>Быстро и без потерь</strong> — «Авто (m4a/aac)».</li>
-          <li><strong>Играть везде</strong> — MP3 192 или MP3 256.</li>
-          <li><strong>Максимум качества в MP3</strong> — MP3 320.</li>
-          <li><strong>Экономия места</strong> — MP3 128 или MP3 96.</li>
+          <li><strong>Быстро и без потерь</strong> - «Авто (m4a/aac)».</li>
+          <li><strong>Играть везде</strong> - MP3 192 или MP3 256.</li>
+          <li><strong>Максимум качества в MP3</strong> - MP3 320.</li>
+          <li><strong>Экономия места</strong> - MP3 128 или MP3 96.</li>
         </ul>
       </details>
 
       <details>
         <summary>Почему иногда приходит файл .webm?</summary>
-        <p>У некоторых роликов оригинальная аудиодорожка — <strong>Opus в WEBM</strong>. Это не ошибка. Хотите MP3 — выберите любую кнопку MP3.</p>
+        <p>У некоторых роликов оригинальная аудиодорожка — <strong>Opus в WEBM</strong>. Это не ошибка. Хотите MP3 - выберите любую кнопку MP3.</p>
       </details>
 
       <details>
@@ -287,7 +267,7 @@
     </footer>
   </div>
 
-  <!-- Лёгкий переключатель EN (визуальный). Для полноценного SEO лучше отдельная /en/. -->
+  <!-- Переключатель EN (визуальный). Для SEO лучше отдельная /en/. -->
   <template id="en">
     <h1 class="h1">Download TikTok & YouTube Shorts in 1080p–240p or MP3</h1>
     <p class="sub">Paste a link → pick quality → get the file. No watermark. Fast & free.</p>
@@ -297,78 +277,32 @@
     function toggleLang(code){
       if(code !== 'en') return;
       document.documentElement.lang = 'en';
-      document.title = 'Download TikTok & YouTube Shorts — Telegram bot ClipFetch';
+      document.title = 'Download TikTok & YouTube Shorts - Telegram bot ClipFetch';
 
       const hero = document.querySelector('.hero .copy');
       const tpl = document.getElementById('en').content.cloneNode(true);
-      const oldH = hero.querySelector('.h1');
-      const oldSub = hero.querySelector('.sub');
-      const newH = tpl.querySelector('.h1');
-      const newSub = tpl.querySelector('.sub');
-      oldH.replaceWith(newH);
-      oldSub.replaceWith(newSub);
-
-      // прокрутка к началу блока
+      hero.querySelector('.h1').replaceWith(tpl.querySelector('.h1'));
+      hero.querySelector('.sub').replaceWith(tpl.querySelector('.sub'));
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
 
-  <!-- JSON-LD: FAQPage (для богатых сниппетов) -->
+  <!-- JSON-LD: FAQPage -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"FAQPage",
     "mainEntity":[
-      {
-        "@type":"Question",
-        "name":"Будет ли водяной знак?",
-        "acceptedAnswer":{"@type":"Answer","text":"Бот старается сохранять ролики без водяного знака. В редких случаях источник отдаёт только версии с водяным знаком - тогда выбирается лучший доступный вариант."}
-      },
-      {
-        "@type":"Question",
-        "name":"Какие есть ограничения Telegram?",
-        "acceptedAnswer":{"@type":"Answer","text":"Для отправки файлов бот укладывает размер видео/аудио в лимит Telegram. Если файл слишком большой, применяется аккуратное сжатие."}
-      },
-      {
-        "@type":"Question",
-        "name":"Законно ли это?",
-        "acceptedAnswer":{"@type":"Answer","text":"Используйте бота только для контента, на который у вас есть права. Уважайте авторов и лицензии платформ."}
-      },
-      {
-        "@type":"Question",
-        "name":"Бесплатно?",
-        "acceptedAnswer":{"@type":"Answer","text":"Да. Бот бесплатен для пользователей. Поддержать проект можно, поделившись ссылкой на бота."}
-      },
-      {
-        "@type":"Question",
-        "name":"Что означает «Авто (m4a/aac)»?",
-        "acceptedAnswer":{"@type":"Answer","text":"Бот берёт лучшую доступную аудиодорожку без перекодирования. Обычно это AAC в контейнере M4A. Если у источника нет AAC (например, выдаётся Opus/WEBM), итоговый файл может быть .webm."}
-      },
-      {
-        "@type":"Question",
-        "name":"Чем отличаются MP3 320 / 256 / 192 / 128 / 96?",
-        "acceptedAnswer":{"@type":"Answer","text":"Это битрейт MP3 (кбит/с). При выборе MP3 бот всегда перекодирует аудио под указанный битрейт. 320≈2.4 МБ/мин, 256≈1.9, 192≈1.4, 128≈1.0, 96≈0.7."}
-      },
-      {
-        "@type":"Question",
-        "name":"Что выбрать?",
-        "acceptedAnswer":{"@type":"Answer","text":"Быстро и без потерь - «Авто (m4a/aac)». Играть везде — MP3 192/256. Максимум качества — MP3 320. Экономия места — MP3 128/96."}
-      },
-      {
-        "@type":"Question",
-        "name":"Почему иногда приходит файл .webm?",
-        "acceptedAnswer":{"@type":"Answer","text":"У некоторых роликов оригинальная аудиодорожка - Opus в WEBM. Хотите MP3 — выберите любую кнопку MP3."}
-      },
-      {
-        "@type":"Question",
-        "name":"Меняется ли качество при «Авто»?",
-        "acceptedAnswer":{"@type":"Answer","text":"Нет. В «Авто» бот по возможности не перекодирует. При выборе MP3 идёт перекодирование под выбранный битрейт."}
-      },
-      {
-        "@type":"Question",
-        "name":"Поддерживаются ли плееры на телефоне?",
-        "acceptedAnswer":{"@type":"Answer","text":"Да. M4A (AAC) и MP3 воспроизводятся на iOS/Android/Windows/macOS и в Telegram."}
-      }
+      {"@type":"Question","name":"Будет ли водяной знак?","acceptedAnswer":{"@type":"Answer","text":"Бот старается сохранять ролики без водяного знака. В редких случаях источник отдаёт только версии с водяным знаком - тогда выбирается лучший доступный вариант."}},
+      {"@type":"Question","name":"Какие есть ограничения Telegram?","acceptedAnswer":{"@type":"Answer","text":"Для отправки файлов бот укладывает размер видео/аудио в лимит Telegram. Если файл слишком большой, применяется аккуратное сжатие."}},
+      {"@type":"Question","name":"Законно ли это?","acceptedAnswer":{"@type":"Answer","text":"Используйте бота только для контента, на который у вас есть права. Уважайте авторов и лицензии платформ."}},
+      {"@type":"Question","name":"Бесплатно?","acceptedAnswer":{"@type":"Answer","text":"Да. Бот бесплатен для пользователей. Поддержать проект можно, поделившись ссылкой на бота."}},
+      {"@type":"Question","name":"Что означает «Авто (m4a/aac)»?","acceptedAnswer":{"@type":"Answer","text":"Бот берёт лучшую доступную аудиодорожку без перекодирования. Обычно это AAC в контейнере M4A. Если у источника нет AAC (например, выдаётся Opus/WEBM), итоговый файл может быть .webm."}},
+      {"@type":"Question","name":"Чем отличаются MP3 320 / 256 / 192 / 128 / 96?","acceptedAnswer":{"@type":"Answer","text":"Это битрейт MP3 (кбит/с). При выборе MP3 бот всегда перекодирует аудио под указанный битрейт. 320≈2.4 МБ/мин, 256≈1.9, 192≈1.4, 128≈1.0, 96≈0.7."}},
+      {"@type":"Question","name":"Что выбрать?","acceptedAnswer":{"@type":"Answer","text":"Быстро и без потерь - «Авто (m4a/aac)». Играть везде — MP3 192/256. Максимум качества - MP3 320. Экономия места - MP3 128/96."}},
+      {"@type":"Question","name":"Почему иногда приходит файл .webm?","acceptedAnswer":{"@type":"Answer","text":"У некоторых роликов оригинальная аудиодорожка - Opus в WEBM. Хотите MP3 - выберите любую кнопку MP3."}},
+      {"@type":"Question","name":"Меняется ли качество при «Авто»?","acceptedAnswer":{"@type":"Answer","text":"Нет. В «Авто» бот по возможности не перекодирует. При выборе MP3 идёт перекодирование под выбранный битрейт."}},
+      {"@type":"Question","name":"Поддерживаются ли плееры на телефоне?","acceptedAnswer":{"@type":"Answer","text":"Да. M4A (AAC) и MP3 воспроизводятся на iOS/Android/Windows/macOS и в Telegram."}}
     ]
   }
   </script>
