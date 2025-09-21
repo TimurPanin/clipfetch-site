@@ -86,22 +86,25 @@
     .card h3{margin:0 0 6px; font-size:18px}
     @media (max-width:880px){ .features{grid-template-columns:1fr; padding:14px; gap:12px} }
 
-    /* FAQ — МУЛЬТИКОЛОНКИ, чтобы соседняя колонка НЕ тянулась */
-    .faq-title{text-align:center; font-weight:800; letter-spacing:.2px; margin:32px 0 10px}
-    .faq-columns{
-      columns: 2 320px;          /* 2 колонки, минимальная ширина блока 320px */
-      column-gap: 16px;
-      margin-top: 8px;
+    /* === FAQ (фикс растяжения соседней колонки) === */
+    .faq-title{
+      text-align:center; font-weight:800; letter-spacing:.2px; margin:32px 0 10px
     }
-    @media (max-width:900px){ .faq-columns{columns:1} }
-    /* каждый вопрос — блочный, запрет переносить внутри колонок */
-    .faq-item{ break-inside: avoid; margin: 0 0 16px; display:block; }
+    /* контейнер из двух независимых колонок */
+    .faq-two-cols{
+      display:flex; gap:16px; align-items:flex-start;
+      margin-top:8px;
+    }
+    .faq-col{
+      flex:1 1 0%;
+      display:flex; flex-direction:column; gap:16px; /* независимая вертикальная колонка */
+      min-width:0;
+    }
+    /* карточка вопроса */
     .faq-item details{
       border:1px solid var(--border);
       background:rgba(255,255,255,.04);
-      border-radius:14px;
-      padding:0;
-      overflow:hidden;
+      border-radius:14px; padding:0; overflow:hidden;
       backdrop-filter:saturate(120%) blur(2px);
     }
     .faq-item summary{
@@ -118,12 +121,16 @@
     .faq-item details > *:not(summary){padding:0 1.1rem 1rem 1.1rem}
     .faq-item p,.faq-item ul{margin:.6rem 0 0}
     .faq-item ul{padding-left:1.1rem}
+    /* мобильная версия — одна колонка */
+    @media (max-width:900px){
+      .faq-two-cols{flex-direction:column}
+    }
 
     footer{margin:36px 0 18px; color:var(--muted); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px}
     .credits a{color:var(--muted)}
     .lang button{background:transparent; color:var(--muted); border:1px solid rgba(255,255,255,.12); padding:6px 10px; border-radius:10px; margin-left:8px; cursor:pointer}
 
-    /* Mobile tweaks */
+    /* Mobile */
     img,svg{max-width:100%; height:auto}
     @media (max-width:560px){
       .wrap{padding:16px}
@@ -204,85 +211,93 @@
       </div>
     </section>
 
-    <!-- FAQ (общий) -->
+    <!-- FAQ: Частые вопросы -->
     <h2 id="faq" class="faq-title">Частые вопросы</h2>
-    <div class="faq-columns">
-      <div class="faq-item">
-        <details open>
-          <summary>Будет ли водяной знак?</summary>
-          <div class="muted">Бот старается сохранять ролики без водяного знака. В редких случаях источник отдаёт только версии с водяным знаком — тогда выбирается лучший доступный вариант.</div>
-        </details>
+    <div class="faq-two-cols">
+      <div class="faq-col">
+        <div class="faq-item">
+          <details open>
+            <summary>Будет ли водяной знак?</summary>
+            <div class="muted">Бот старается сохранять ролики без водяного знака. В редких случаях источник отдаёт только версии с водяным знаком — тогда выбирается лучший доступный вариант.</div>
+          </details>
+        </div>
+        <div class="faq-item">
+          <details>
+            <summary>Законно ли это?</summary>
+            <div class="muted">Используйте бота только для контента, на который у вас есть права. Уважайте авторов и лицензии платформ.</div>
+          </details>
+        </div>
       </div>
-      <div class="faq-item">
-        <details>
-          <summary>Какие есть ограничения Telegram?</summary>
-          <div class="muted">Для отправки файлов бот укладывает размер видео/аудио в лимит Telegram. Если файл слишком большой, применяется аккуратное сжатие.</div>
-        </details>
-      </div>
-      <div class="faq-item">
-        <details>
-          <summary>Законно ли это?</summary>
-          <div class="muted">Используйте бота только для контента, на который у вас есть права. Уважайте авторов и лицензии платформ.</div>
-        </details>
-      </div>
-      <div class="faq-item">
-        <details>
-          <summary>Бесплатно?</summary>
-          <div class="muted">Да. Бот бесплатен для пользователей. Поддержать проект можно, поделившись ссылкой на бота.</div>
-        </details>
+      <div class="faq-col">
+        <div class="faq-item">
+          <details>
+            <summary>Какие есть ограничения Telegram?</summary>
+            <div class="muted">Для отправки файлов бот укладывает размер видео/аудио в лимит Telegram. Если файл слишком большой, применяется аккуратное сжатие.</div>
+          </details>
+        </div>
+        <div class="faq-item">
+          <details>
+            <summary>Бесплатно?</summary>
+            <div class="muted">Да. Бот бесплатен для пользователей. Поддержать проект можно, поделившись ссылкой на бота.</div>
+          </details>
+        </div>
       </div>
     </div>
 
-    <!-- FAQ (аудио) -->
+    <!-- FAQ: Аудио -->
     <h2 id="faq-audio" class="faq-title">Вопросы и ответы: аудио-скачивание</h2>
-    <div class="faq-columns">
-      <div class="faq-item">
-        <details>
-          <summary>Что означает «⚡ Авто (m4a/aac)»?</summary>
-          <p>Бот скачивает <strong>лучшую доступную аудиодорожку без перекодирования</strong>. Обычно это AAC в контейнере <strong>M4A</strong>. Если у источника нет AAC (например, выдаётся Opus/WEBM), итоговый файл может быть <code>.webm</code> — это нормально.</p>
-        </details>
+    <div class="faq-two-cols">
+      <div class="faq-col">
+        <div class="faq-item">
+          <details>
+            <summary>Что означает «⚡ Авто (m4a/aac)»?</summary>
+            <p>Бот скачивает <strong>лучшую доступную аудиодорожку без перекодирования</strong>. Обычно это AAC в контейнере <strong>M4A</strong>. Если у источника нет AAC (например, выдаётся Opus/WEBM), итоговый файл может быть <code>.webm</code> — это нормально.</p>
+          </details>
+        </div>
+        <div class="faq-item">
+          <details>
+            <summary>Что выбрать?</summary>
+            <ul>
+              <li><strong>Быстро и без потерь</strong> — «Авто (m4a/aac)».</li>
+              <li><strong>Играть везде</strong> — MP3 192 или MP3 256.</li>
+              <li><strong>Максимум качества в MP3</strong> — MP3 320.</li>
+              <li><strong>Экономия места</strong> — MP3 128 или MP3 96.</li>
+            </ul>
+          </details>
+        </div>
+        <div class="faq-item">
+          <details>
+            <summary>Меняется ли качество при «Авто»?</summary>
+            <p>Нет. В «Авто» бот по возможности <strong>не перекодирует</strong>. При выборе MP3 идёт перекодирование под выбранный битрейт.</p>
+          </details>
+        </div>
       </div>
-      <div class="faq-item">
-        <details>
-          <summary>Чем отличаются MP3 320 / 256 / 192 / 128 / 96?</summary>
-          <p>Это <strong>битрейт MP3</strong> (кбит/с). При выборе MP3 бот всегда <strong>перекодирует</strong> аудио под указанный битрейт.</p>
-          <ul>
-            <li>320 kbps ≈ <strong>2.4 МБ/мин</strong></li>
-            <li>256 kbps ≈ <strong>1.9 МБ/мин</strong></li>
-            <li>192 kbps ≈ <strong>1.4 МБ/мин</strong></li>
-            <li>128 kbps ≈ <strong>1.0 МБ/мин</strong></li>
-            <li>96 kbps ≈ <strong>0.7 МБ/мин</strong></li>
-          </ul>
-        </details>
-      </div>
-      <div class="faq-item">
-        <details>
-          <summary>Что выбрать?</summary>
-          <ul>
-            <li><strong>Быстро и без потерь</strong> — «Авто (m4a/aac)».</li>
-            <li><strong>Играть везде</strong> — MP3 192 или MP3 256.</li>
-            <li><strong>Максимум качества в MP3</strong> — MP3 320.</li>
-            <li><strong>Экономия места</strong> — MP3 128 или MP3 96.</li>
-          </ul>
-        </details>
-      </div>
-      <div class="faq-item">
-        <details>
-          <summary>Почему иногда приходит файл .webm?</summary>
-          <p>У некоторых роликов оригинальная аудиодорожка — <strong>Opus в WEBM</strong>. Это не ошибка. Хотите MP3 — выберите любую кнопку MP3.</p>
-        </details>
-      </div>
-      <div class="faq-item">
-        <details>
-          <summary>Меняется ли качество при «Авто»?</summary>
-          <p>Нет. В «Авто» бот по возможности <strong>не перекодирует</strong>. При выборе MP3 идёт перекодирование под выбранный битрейт.</p>
-        </details>
-      </div>
-      <div class="faq-item">
-        <details>
-          <summary>Поддерживаются ли плееры на телефоне?</summary>
-          <p>Да. <strong>M4A (AAC)</strong> и <strong>MP3</strong> воспроизводятся на iOS/Android/Windows/macOS и в Telegram.</p>
-        </details>
+      <div class="faq-col">
+        <div class="faq-item">
+          <details>
+            <summary>Чем отличаются MP3 320 / 256 / 192 / 128 / 96?</summary>
+            <p>Это <strong>битрейт MP3</strong> (кбит/с). При выборе MP3 бот всегда <strong>перекодирует</strong> аудио под указанный битрейт.</p>
+            <ul>
+              <li>320 kbps ≈ <strong>2.4 МБ/мин</strong></li>
+              <li>256 kbps ≈ <strong>1.9 МБ/мин</strong></li>
+              <li>192 kbps ≈ <strong>1.4 МБ/мин</strong></li>
+              <li>128 kbps ≈ <strong>1.0 МБ/мин</strong></li>
+              <li>96 kbps ≈ <strong>0.7 МБ/мин</strong></li>
+            </ul>
+          </details>
+        </div>
+        <div class="faq-item">
+          <details>
+            <summary>Почему иногда приходит файл .webm?</summary>
+            <p>У некоторых роликов оригинальная аудиодорожка — <strong>Opus в WEBM</strong>. Это не ошибка. Хотите MP3 — выберите любую кнопку MP3.</p>
+          </details>
+        </div>
+        <div class="faq-item">
+          <details>
+            <summary>Поддерживаются ли плееры на телефоне?</summary>
+            <p>Да. <strong>M4A (AAC)</strong> и <strong>MP3</strong> воспроизводятся на iOS/Android/Windows/macOS и в Telegram.</p>
+          </details>
+        </div>
       </div>
     </div>
 
