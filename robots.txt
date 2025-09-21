@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 
+# основной сайт указывает на единственный корректный хост
+Host: lagoda1337.ru
 Sitemap: https://lagoda1337.ru/sitemap.xml
