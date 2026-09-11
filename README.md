@@ -1,37 +1,56 @@
+# ClipFetch Landing Page
 
-# 🌐 ClipFetch Site
+Static landing page for the **ClipFetch Telegram bot**, built as a lightweight public website with a custom domain.
 
-Официальный лендинг для Telegram-бота **[ClipFetch](https://t.me/ClipFetchBot)** - сервиса для скачивания видео с **YouTube Shorts, TikTok,**
+**Live site:** https://lagoda1337.ru  
+**Telegram bot:** https://t.me/clipfetch_O1337_bot
 
----
+## What the site includes
 
-## ✨ Возможности бота
-- Скачивание видео без водяных знаков
-- Поддержка YouTube Shorts и TikTok
-- Выбор качества (HD/SD)
-- Конвертация в MP3 (аудио-режим)
-- Быстрая работа прямо в Telegram
+- Responsive single-page layout
+- Direct CTA to the Telegram bot
+- Russian-language product explanation and FAQ
+- Structured FAQ data with JSON-LD
+- Canonical URL and social metadata
+- `robots.txt` and `sitemap.xml`
+- Privacy policy page
+- Custom-domain configuration for GitHub Pages
 
----
+## Tech stack
 
-## 🖥️ Связь с десктопной программой
-Этот сайт и бот связаны с проектом **[Video Downloader GUI](https://github.com/<yourname>/video-downloader-gui)**.  
-- **ClipFetch Bot** - лёгкая версия (работает прямо в Telegram).  
-- **Video Downloader GUI** - расширенная десктопная версия для Windows с большим функционалом:  
-  - поддержка плейлистов YouTube, включая MIX/RD  
-  - расширенные настройки качества и форматов  
-  - прогресс-бар с процентами и скоростью  
-  - автоматическая работа с cookies браузера  
-  - переключение интерфейса RU/EN  
+- **HTML5**
+- **CSS3**
+- **Vanilla JavaScript**
+- **GitHub Pages**
 
-Таким образом, бот удобен для быстрых загрузок 📱, а программа подойдёт для более продвинутых пользователей 💻.
+No frontend framework or build step is required.
 
----
+## Project structure
 
-## 📌 О сайте
-Лендинг создан как **простая точка входа** для пользователей:  
-- Объясняет, как работает бот (скопируй ссылку → вставь в бот → получи файл)  
-- Содержит CTA-кнопку для перехода в Telegram  
-- SEO-оптимизирован под запросы: «скачать TikTok без водяного знака», «скачать YouTube Shorts»  
+```text
+clipfetch-site/
+├── assets/
+│   └── logo.svg
+├── CNAME
+├── index.html
+├── privacy.html
+├── robots.txt
+├── sitemap.xml
+└── README.md
+```
 
-Сайт доступен по адресу: **[lagoda1337.ru](https://lagoda1337.ru)**
+## Related project
+
+The desktop companion project is available here:
+
+**[Video Downloader GUI](https://github.com/TimurPanin/video-downloader-gui)** — a Windows-oriented downloader built with Python, Tkinter and yt-dlp.
+
+## Deployment
+
+The repository is configured for GitHub Pages and uses the custom domain stored in `CNAME`:
+
+```text
+lagoda1337.ru
+```
+
+The site is intentionally kept static so it can be deployed without a backend or build pipeline.
