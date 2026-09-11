@@ -1,20 +1,21 @@
 # ClipFetch Landing Page
 
-Static landing page for the **ClipFetch Telegram bot**, built as a lightweight public website with a custom domain.
+> **Status: discontinued test project.**  
+> This repository is kept only as an example of an early static landing-page experiment. The original service is no longer maintained and should not be considered an active product.
 
-**Live site:** https://lagoda1337.ru  
-**Telegram bot:** https://t.me/clipfetch_O1337_bot
+ClipFetch Site was a small experimental landing page created to practice building and publishing a lightweight static website without a frontend framework or backend.
 
-## What the site includes
+## What was tested
 
 - Responsive single-page layout
-- Direct CTA to the Telegram bot
-- Russian-language product explanation and FAQ
-- Structured FAQ data with JSON-LD
-- Canonical URL and social metadata
+- HTML/CSS component styling
+- Small vanilla JavaScript interactions
+- SEO metadata and canonical URLs
+- Open Graph / social metadata
+- JSON-LD structured data
 - `robots.txt` and `sitemap.xml`
-- Privacy policy page
-- Custom-domain configuration for GitHub Pages
+- Privacy-policy page
+- GitHub Pages deployment and custom-domain configuration
 
 ## Tech stack
 
@@ -23,7 +24,7 @@ Static landing page for the **ClipFetch Telegram bot**, built as a lightweight p
 - **Vanilla JavaScript**
 - **GitHub Pages**
 
-No frontend framework or build step is required.
+No frontend framework or build step was used.
 
 ## Project structure
 
@@ -39,18 +40,6 @@ clipfetch-site/
 └── README.md
 ```
 
-## Related project
+## Notes
 
-The desktop companion project is available here:
-
-**[Video Downloader GUI](https://github.com/TimurPanin/video-downloader-gui)** — a Windows-oriented downloader built with Python, Tkinter and yt-dlp.
-
-## Deployment
-
-The repository is configured for GitHub Pages and uses the custom domain stored in `CNAME`:
-
-```text
-lagoda1337.ru
-```
-
-The site is intentionally kept static so it can be deployed without a backend or build pipeline.
+The repository remains public as a historical/test project. External service links were intentionally removed because the original project is no longer active.
