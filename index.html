@@ -4,152 +4,226 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Яндекс.Вебмастер -->
   <meta name="yandex-verification" content="9ba48ba8d1cb7980" />
 
-  <title>Скачать TikTok и YouTube Shorts — Телеграм-бот ClipFetch</title>
-  <meta name="description" content="Бесплатный Телеграм-бот: скачивайте видео из TikTok и YouTube Shorts без водяного знака в 1080p–240p или MP3. Вставьте ссылку — выберите качество — получите файл." />
+  <title>Скачать TikTok и YouTube Shorts — Telegram-бот ClipFetch</title>
+  <meta name="description" content="Telegram-бот ClipFetch для загрузки TikTok и YouTube Shorts с выбором качества и аудио-режимом." />
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
   <meta name="theme-color" content="#0b1220" />
 
   <link rel="canonical" href="https://lagoda1337.ru/" />
+  <link rel="icon" type="image/svg+xml" href="/assets/logo.svg" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
   <meta property="og:site_name" content="ClipFetch" />
-  <meta property="og:title" content="Скачать TikTok и YouTube Shorts — Телеграм-бот ClipFetch" />
-  <meta property="og:description" content="Скачивайте клипы без водяного знака в 1080p–240p или MP3. Вставьте ссылку — бот всё сделает." />
-  <meta property="og:url" content="https://lagoda1337.ru/">
-  <meta property="og:image" content="https://lagoda1337.ru/og-cover.jpg">
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+  <meta property="og:title" content="Скачать TikTok и YouTube Shorts — Telegram-бот ClipFetch" />
+  <meta property="og:description" content="Вставьте ссылку, выберите качество или аудио и получите файл через Telegram." />
+  <meta property="og:url" content="https://lagoda1337.ru/" />
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Скачать TikTok и YouTube Shorts — Телеграм-бот ClipFetch" />
-  <meta name="twitter:description" content="Бесплатный Телеграм-бот для быстрой загрузки клипов TikTok и Shorts в 1080p–240p или MP3." />
-  <meta name="twitter:image" content="https://lagoda1337.ru/og-cover.jpg">
-
-  <link rel="icon" href="/assets/favicon.ico" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Скачать TikTok и YouTube Shorts — Telegram-бот ClipFetch" />
+  <meta name="twitter:description" content="ClipFetch — Telegram-бот для загрузки TikTok и YouTube Shorts с выбором качества и аудио." />
 
   <style>
-    :root{
-      --bg:#0b1220; --panel:#111a2c; --panel-2:#0e1627;
-      --text:#e6ecf2; --muted:#9fb0c0; --accent:#6ee7b7; --accent-2:#60a5fa;
-      --border:rgba(255,255,255,.08); --radius:14px; --maxw:980px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans";
-      background:radial-gradient(1200px 600px at 20% -10%, #12203a, transparent), var(--bg);
-      color:var(--text); line-height:1.55;
-    }
-    a{color:var(--accent-2); text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:var(--maxw); margin:0 auto; padding:24px}
-
-    /* Header */
-    header{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:18px 0}
-    .brand{display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.2px}
-    .brand img{width:28px; height:28px; display:block}
-    nav a{margin-left:16px; font-size:14px; color:var(--muted)}
-
-    /* Panels */
-    .panel{background:linear-gradient(180deg,var(--panel),var(--panel-2)); border:1px solid var(--border); border-radius:var(--radius); box-shadow:0 10px 40px rgba(0,0,0,.3)}
-
-    /* HERO */
-    .hero{display:grid; grid-template-columns:1fr; gap:18px}
-    .hero .copy{padding:26px}
-    .h1{font-size:clamp(28px,4.2vw,40px); margin:0 0 10px; line-height:1.15; letter-spacing:.1px}
-    .sub{color:var(--muted); font-size:16px}
-    .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
-    .btn{appearance:none; border:0; cursor:pointer; display:inline-flex; align-items:center; gap:10px; white-space:nowrap; padding:14px 18px; border-radius:12px; font-weight:700; background:#1f2a44; color:#fff; box-shadow:0 8px 20px rgba(0,0,0,.25); transition:.2s transform,.2s opacity}
-    .btn svg{width:20px; height:20px}
-    .btn:hover{transform:translateY(-1px); opacity:.95}
-    .btn.primary{background:linear-gradient(135deg,#60a5fa,#34d399); color:#051220}
-    .btn.ghost{background:transparent; border:1px solid rgba(255,255,255,.1); color:var(--text)}
-    .badge{display:inline-flex; align-items:center; gap:8px; font-size:13px; color:var(--muted)}
-    .badge svg{width:18px; height:18px}
-
-    /* HOW */
-    .how{margin-top:18px}
-    .how-inner{padding:22px; display:flex; flex-direction:column; align-items:center; text-align:center}
-    .how-inner h2{margin:0 0 8px}
-    .how-inner ol{padding-left:0; margin:0; list-style-position:inside; max-width:720px}
-    .muted{color:var(--muted); font-size:14px; margin:0}
-
-    /* FEATURES */
-    .features-wrap{margin-top:18px}
-    .features{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; padding:18px; align-content:stretch}
-    .card{padding:18px; border-radius:14px; border:1px solid var(--border); background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.03)); display:flex; flex-direction:column; justify-content:center; min-height:96px}
-    .card h3{margin:0 0 6px; font-size:18px}
-    @media (max-width:880px){ .features{grid-template-columns:1fr; padding:14px; gap:12px} }
-
-    /* === FAQ (фикс растяжения соседней колонки) === */
-    .faq-title{
-      text-align:center; font-weight:800; letter-spacing:.2px; margin:32px 0 10px
-    }
-    /* контейнер из двух независимых колонок */
-    .faq-two-cols{
-      display:flex; gap:16px; align-items:flex-start;
-      margin-top:8px;
-    }
-    .faq-col{
-      flex:1 1 0%;
-      display:flex; flex-direction:column; gap:16px; /* независимая вертикальная колонка */
-      min-width:0;
-    }
-    /* карточка вопроса */
-    .faq-item details{
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.04);
-      border-radius:14px; padding:0; overflow:hidden;
-      backdrop-filter:saturate(120%) blur(2px);
-    }
-    .faq-item summary{
-      display:flex; align-items:center; gap:.6rem;
-      padding:.95rem 1.1rem; font-weight:700; cursor:pointer;
-      list-style:none; position:relative; min-height:48px;
-    }
-    .faq-item summary::-webkit-details-marker{display:none}
-    .faq-item summary::after{
-      content:"▸"; position:absolute; right:12px; top:50%;
-      transform:translateY(-50%); opacity:.6; transition:transform .18s ease; font-size:1rem
-    }
-    .faq-item details[open] summary::after{content:"▾"; transform:translateY(-50%)}
-    .faq-item details > *:not(summary){padding:0 1.1rem 1rem 1.1rem}
-    .faq-item p,.faq-item ul{margin:.6rem 0 0}
-    .faq-item ul{padding-left:1.1rem}
-    /* мобильная версия — одна колонка */
-    @media (max-width:900px){
-      .faq-two-cols{flex-direction:column}
+    :root {
+      --bg: #0b1220;
+      --panel: #111a2c;
+      --panel-2: #0e1627;
+      --text: #e6ecf2;
+      --muted: #9fb0c0;
+      --accent: #6ee7b7;
+      --accent-2: #60a5fa;
+      --border: rgba(255,255,255,.08);
+      --radius: 14px;
+      --maxw: 980px;
     }
 
-    footer{margin:36px 0 18px; color:var(--muted); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px}
-    .credits a{color:var(--muted)}
-    .lang button{background:transparent; color:var(--muted); border:1px solid rgba(255,255,255,.12); padding:6px 10px; border-radius:10px; margin-left:8px; cursor:pointer}
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100%;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      background: radial-gradient(1200px 600px at 20% -10%, #12203a, transparent), var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
 
-    /* Mobile */
-    img,svg{max-width:100%; height:auto}
-    @media (max-width:560px){
-      .wrap{padding:16px}
-      .h1{font-size:28px}
-      .sub{font-size:15px}
-      header{flex-wrap:wrap}
-      nav a{margin-left:12px}
-      .cta-row .btn{width:100%}
+    a { color: var(--accent-2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img, svg { max-width: 100%; height: auto; }
+
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 24px; }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: .2px;
+      color: var(--text);
+    }
+
+    .brand:hover { text-decoration: none; }
+    .brand img { width: 32px; height: 32px; display: block; }
+
+    nav { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    nav a { font-size: 14px; color: var(--muted); }
+
+    .panel {
+      background: linear-gradient(180deg, var(--panel), var(--panel-2));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 40px rgba(0,0,0,.3);
+    }
+
+    .hero .copy { padding: 30px; }
+    .h1 {
+      font-size: clamp(28px, 4.2vw, 42px);
+      margin: 0 0 12px;
+      line-height: 1.15;
+      letter-spacing: .1px;
+    }
+
+    .sub { color: var(--muted); font-size: 16px; margin: 0; }
+    .notice {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .notice svg { width: 18px; height: 18px; flex: 0 0 auto; }
+
+    .cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 18px;
+      border-radius: 12px;
+      font-weight: 750;
+      background: #1f2a44;
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(0,0,0,.25);
+      transition: .2s transform, .2s opacity;
+    }
+
+    .btn svg { width: 20px; height: 20px; }
+    .btn:hover { transform: translateY(-1px); opacity: .95; text-decoration: none; }
+    .btn.primary { background: linear-gradient(135deg, #60a5fa, #34d399); color: #051220; }
+    .btn.ghost { background: transparent; border: 1px solid rgba(255,255,255,.1); color: var(--text); }
+
+    .how { margin-top: 18px; }
+    .how-inner { padding: 22px; text-align: center; }
+    .how-inner h2 { margin: 0 0 8px; }
+    .how-inner ol { padding-left: 0; margin: 0 auto; list-style-position: inside; max-width: 760px; }
+
+    .muted { color: var(--muted); font-size: 14px; margin: 0; }
+
+    .features-wrap { margin-top: 18px; }
+    .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding: 18px; }
+    .card {
+      padding: 18px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.03));
+      min-height: 110px;
+    }
+
+    .card h3 { margin: 0 0 6px; font-size: 18px; }
+
+    .faq-title { text-align: center; font-weight: 800; letter-spacing: .2px; margin: 32px 0 10px; }
+    .faq-two-cols { display: flex; gap: 16px; align-items: flex-start; margin-top: 8px; }
+    .faq-col { flex: 1 1 0; display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+
+    .faq-item details {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      border-radius: 14px;
+      overflow: hidden;
+      backdrop-filter: saturate(120%) blur(2px);
+    }
+
+    .faq-item summary {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .95rem 2.5rem .95rem 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      list-style: none;
+      position: relative;
+      min-height: 48px;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: "▸";
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: .6;
+    }
+
+    .faq-item details[open] summary::after { content: "▾"; }
+    .faq-item details > *:not(summary) { padding: 0 1.1rem 1rem; color: var(--muted); }
+    .faq-item p, .faq-item ul { margin: .6rem 0 0; }
+    .faq-item ul { padding-left: 1.2rem; }
+
+    footer {
+      margin: 38px 0 12px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-links { display: flex; gap: 14px; flex-wrap: wrap; }
+    .footer-links a { color: var(--muted); }
+
+    @media (max-width: 900px) {
+      .features { grid-template-columns: 1fr; padding: 14px; gap: 12px; }
+      .faq-two-cols { flex-direction: column; }
+      .faq-col { width: 100%; }
+    }
+
+    @media (max-width: 620px) {
+      .wrap { padding: 16px; }
+      header { align-items: flex-start; flex-direction: column; }
+      nav { gap: 12px; }
+      .hero .copy { padding: 22px; }
+      .h1 { font-size: 28px; }
+      .sub { font-size: 15px; }
+      .cta-row .btn { width: 100%; }
     }
   </style>
 
-  <!-- JSON-LD: SoftwareApplication -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "ClipFetch — загрузчик TikTok и YouTube Shorts",
+    "name": "ClipFetch",
     "applicationCategory": "MultimediaApplication",
-    "operatingSystem": "Android, iOS, Web",
+    "operatingSystem": "Telegram",
     "offers": {"@type":"Offer","price":"0","priceCurrency":"USD"},
     "url": "https://t.me/clipfetch_O1337_bot",
     "sameAs": ["https://t.me/clipfetch_O1337_bot"]
@@ -159,196 +233,173 @@
 <body>
   <div class="wrap">
     <header>
-      <div class="brand" aria-label="ClipFetch">
-        <img src="/assets/logo.svg" alt="ClipFetch" width="28" height="28" />
-        ClipFetch
-      </div>
-      <nav>
+      <a class="brand" href="/" aria-label="ClipFetch — главная">
+        <img src="/assets/logo.svg" alt="" width="32" height="32" />
+        <span>ClipFetch</span>
+      </a>
+      <nav aria-label="Основная навигация">
         <a href="#how">Как это работает</a>
         <a href="#faq">FAQ</a>
-        <a href="https://t.me/clipfetch_O1337_bot" target="_blank" rel="noopener">Открыть бота</a>
+        <a href="/privacy.html">Конфиденциальность</a>
+        <a href="https://t.me/clipfetch_O1337_bot" target="_blank" rel="noopener noreferrer">Открыть бота</a>
       </nav>
     </header>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="copy panel">
-        <h1 class="h1">Скачивайте TikTok и YouTube Shorts в 1080p–240p или MP3</h1>
-        <p class="sub">Вставьте ссылку → выберите качество → получите файл. Без водяного знака. Быстро и бесплатно.
-          <span class="badge" title="только законный контент">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l7 4v6c0 5-4 9-7 10-3-1-7-5-7-10V6l7-4z"/></svg>
-            Используйте только на контенте, где у вас есть права
-          </span>
-        </p>
-        <div class="cta-row">
-          <a class="btn primary" href="https://t.me/clipfetch_O1337_bot?start=site" target="_blank" rel="noopener" aria-label="Открыть бота в Telegram">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9.4 15.6l.3-3.2 7.4-6.7c.3-.3.8 0 .7.4l-1.3 8.4c-.1.4-.5.6-.9.4l-3-1.3-1.5 1.5c-.2.2-.6.1-.7-.1l-.9-1z"/></svg>
-            Открыть бота в Telegram
-          </a>
-          <a class="btn ghost" href="#how">Как это работает</a>
+    <main>
+      <section class="hero">
+        <div class="copy panel">
+          <h1 class="h1">TikTok и YouTube Shorts — прямо в Telegram</h1>
+          <p class="sub">Вставьте ссылку, выберите качество или аудио и получите файл в чате с ботом.</p>
+          <div class="notice">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l7 4v6c0 5-4 9-7 10-3-1-7-5-7-10V6l7-4z"/></svg>
+            <span>Используйте сервис только для контента, который вы имеете право скачивать.</span>
+          </div>
+          <div class="cta-row">
+            <a class="btn primary" href="https://t.me/clipfetch_O1337_bot?start=site" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.4 15.6l.3-3.2 7.4-6.7c.3-.3.8 0 .7.4l-1.3 8.4c-.1.4-.5.6-.9.4l-3-1.3-1.5 1.5c-.2.2-.6.1-.7-.1l-.9-1z"/></svg>
+              Открыть бота в Telegram
+            </a>
+            <a class="btn ghost" href="#how">Как это работает</a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- HOW -->
-    <section id="how" class="how panel">
-      <div class="how-inner">
-        <h2 style="margin:0 0 8px;">Как это работает</h2>
-        <ol class="muted">
-          <li>Откройте бота → вставьте ссылку на TikTok или YouTube Shorts.</li>
-          <li>Нажмите <b>«Скачать»</b> → выберите качество (1080p…240p) или <b>«Аудио»</b>.</li>
-          <li>Получите файл прямо в Telegram. Готово 👍</li>
-        </ol>
-      </div>
-    </section>
+      <section id="how" class="how panel">
+        <div class="how-inner">
+          <h2>Как это работает</h2>
+          <ol class="muted">
+            <li>Откройте бота и отправьте ссылку на TikTok или YouTube Shorts.</li>
+            <li>Выберите доступное качество видео или аудио-режим.</li>
+            <li>Получите обработанный файл прямо в Telegram.</li>
+          </ol>
+        </div>
+      </section>
 
-    <!-- FEATURES -->
-    <section class="features-wrap panel">
-      <div class="features">
-        <div class="card"><h3>🎬 TikTok и Shorts</h3><p class="muted">Поддержка клипов TikTok и YouTube Shorts. Без водяного знака.</p></div>
-        <div class="card"><h3>📺 1080p–240p</h3><p class="muted">Выбор качества перед скачиванием: 1080p, 720p, 480p, 360p, 240p.</p></div>
-        <div class="card"><h3>🎧 MP3-аудио</h3><p class="muted">Извлечение аудио — удобные пресеты битрейта.</p></div>
-      </div>
-    </section>
+      <section class="features-wrap panel" aria-label="Возможности">
+        <div class="features">
+          <article class="card">
+            <h3>🎬 TikTok и Shorts</h3>
+            <p class="muted">Работа с короткими видео TikTok и YouTube Shorts.</p>
+          </article>
+          <article class="card">
+            <h3>📺 Выбор качества</h3>
+            <p class="muted">Перед загрузкой можно выбрать один из доступных вариантов качества.</p>
+          </article>
+          <article class="card">
+            <h3>🎧 Аудио</h3>
+            <p class="muted">Доступен аудио-режим с вариантами формата и битрейта.</p>
+          </article>
+        </div>
+      </section>
 
-    <!-- FAQ: Частые вопросы -->
-    <h2 id="faq" class="faq-title">Частые вопросы</h2>
-    <div class="faq-two-cols">
-      <div class="faq-col">
-        <div class="faq-item">
-          <details open>
-            <summary>Будет ли водяной знак?</summary>
-            <div class="muted">Бот старается сохранять ролики без водяного знака. В редких случаях источник отдаёт только версии с водяным знаком — тогда выбирается лучший доступный вариант.</div>
-          </details>
+      <h2 id="faq" class="faq-title">Частые вопросы</h2>
+      <div class="faq-two-cols">
+        <div class="faq-col">
+          <div class="faq-item">
+            <details open>
+              <summary>Будет ли водяной знак?</summary>
+              <p>Бот старается использовать лучший доступный вариант файла. Результат зависит от того, что отдаёт источник.</p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary>Законно ли это?</summary>
+              <p>Используйте бот только для контента, который вы имеете право скачивать. Уважайте авторские права и правила платформ.</p>
+            </details>
+          </div>
         </div>
-        <div class="faq-item">
-          <details>
-            <summary>Законно ли это?</summary>
-            <div class="muted">Используйте бота только для контента, на который у вас есть права. Уважайте авторов и лицензии платформ.</div>
-          </details>
+        <div class="faq-col">
+          <div class="faq-item">
+            <details>
+              <summary>Какие есть ограничения Telegram?</summary>
+              <p>Размер и способ отправки файла зависят от ограничений Telegram и доступного исходного медиа.</p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary>Бесплатно?</summary>
+              <p>Текущая публичная версия бота доступна пользователям бесплатно.</p>
+            </details>
+          </div>
         </div>
       </div>
-      <div class="faq-col">
-        <div class="faq-item">
-          <details>
-            <summary>Какие есть ограничения Telegram?</summary>
-            <div class="muted">Для отправки файлов бот укладывает размер видео/аудио в лимит Telegram. Если файл слишком большой, применяется аккуратное сжатие.</div>
-          </details>
-        </div>
-        <div class="faq-item">
-          <details>
-            <summary>Бесплатно?</summary>
-            <div class="muted">Да. Бот бесплатен для пользователей. Поддержать проект можно, поделившись ссылкой на бота.</div>
-          </details>
-        </div>
-      </div>
-    </div>
 
-    <!-- FAQ: Аудио -->
-    <h2 id="faq-audio" class="faq-title">Вопросы и ответы: аудио-скачивание</h2>
-    <div class="faq-two-cols">
-      <div class="faq-col">
-        <div class="faq-item">
-          <details>
-            <summary>Что означает «⚡ Авто (m4a/aac)»?</summary>
-            <p>Бот скачивает <strong>лучшую доступную аудиодорожку без перекодирования</strong>. Обычно это AAC в контейнере <strong>M4A</strong>. Если у источника нет AAC (например, выдаётся Opus/WEBM), итоговый файл может быть <code>.webm</code> — это нормально.</p>
-          </details>
+      <h2 id="faq-audio" class="faq-title">Аудио-режим</h2>
+      <div class="faq-two-cols">
+        <div class="faq-col">
+          <div class="faq-item">
+            <details>
+              <summary>Что означает «Авто»?</summary>
+              <p>В автоматическом режиме бот старается использовать доступную аудиодорожку без лишнего перекодирования. Конкретный контейнер зависит от источника.</p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary>Что выбрать?</summary>
+              <ul>
+                <li><strong>Авто</strong> — когда важны скорость и исходный формат.</li>
+                <li><strong>MP3</strong> — когда нужна широкая совместимость с плеерами.</li>
+              </ul>
+            </details>
+          </div>
         </div>
-        <div class="faq-item">
-          <details>
-            <summary>Что выбрать?</summary>
-            <ul>
-              <li><strong>Быстро и без потерь</strong> — «Авто (m4a/aac)».</li>
-              <li><strong>Играть везде</strong> — MP3 192 или MP3 256.</li>
-              <li><strong>Максимум качества в MP3</strong> — MP3 320.</li>
-              <li><strong>Экономия места</strong> — MP3 128 или MP3 96.</li>
-            </ul>
-          </details>
-        </div>
-        <div class="faq-item">
-          <details>
-            <summary>Меняется ли качество при «Авто»?</summary>
-            <p>Нет. В «Авто» бот по возможности <strong>не перекодирует</strong>. При выборе MP3 идёт перекодирование под выбранный битрейт.</p>
-          </details>
-        </div>
-      </div>
-      <div class="faq-col">
-        <div class="faq-item">
-          <details>
-            <summary>Чем отличаются MP3 320 / 256 / 192 / 128 / 96?</summary>
-            <p>Это <strong>битрейт MP3</strong> (кбит/с). При выборе MP3 бот всегда <strong>перекодирует</strong> аудио под указанный битрейт.</p>
-            <ul>
-              <li>320 kbps ≈ <strong>2.4 МБ/мин</strong></li>
-              <li>256 kbps ≈ <strong>1.9 МБ/мин</strong></li>
-              <li>192 kbps ≈ <strong>1.4 МБ/мин</strong></li>
-              <li>128 kbps ≈ <strong>1.0 МБ/мин</strong></li>
-              <li>96 kbps ≈ <strong>0.7 МБ/мин</strong></li>
-            </ul>
-          </details>
-        </div>
-        <div class="faq-item">
-          <details>
-            <summary>Почему иногда приходит файл .webm?</summary>
-            <p>У некоторых роликов оригинальная аудиодорожка — <strong>Opus в WEBM</strong>. Это не ошибка. Хотите MP3 — выберите любую кнопку MP3.</p>
-          </details>
-        </div>
-        <div class="faq-item">
-          <details>
-            <summary>Поддерживаются ли плееры на телефоне?</summary>
-            <p>Да. <strong>M4A (AAC)</strong> и <strong>MP3</strong> воспроизводятся на iOS/Android/Windows/macOS и в Telegram.</p>
-          </details>
+        <div class="faq-col">
+          <div class="faq-item">
+            <details>
+              <summary>Почему иногда получается .webm?</summary>
+              <p>Некоторые источники предоставляют аудио в Opus/WEBM. Это допустимый исходный формат, а MP3 можно выбрать отдельно, если такой вариант доступен.</p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary>Поддерживаются ли мобильные плееры?</summary>
+              <p>Распространённые форматы вроде M4A и MP3 поддерживаются большинством современных устройств и приложений.</p>
+            </details>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
 
     <footer>
-      <div class="credits">Идея и концепция: <a href="https://t.me/clipfetch_O1337_bot" target="_blank" rel="noopener">Lagoda1337</a></div>
-      <div class="lang">RU · <button type="button" onclick="toggleLang('en')">EN</button></div>
+      <div>© 2025–2026 ClipFetch</div>
+      <div class="footer-links">
+        <a href="/privacy.html">Политика конфиденциальности</a>
+        <a href="https://t.me/clipfetch_O1337_bot" target="_blank" rel="noopener noreferrer">Telegram</a>
+      </div>
     </footer>
   </div>
 
-  <!-- EN preview -->
-  <template id="en">
-    <h1 class="h1">Download TikTok & YouTube Shorts in 1080p–240p or MP3</h1>
-    <p class="sub">Paste a link — pick quality — get the file. No watermark. Fast & free.</p>
-  </template>
-
-  <script>
-    function toggleLang(code){
-      if(code!=='en')return;
-      document.documentElement.lang='en';
-      document.title='Download TikTok & YouTube Shorts — Telegram bot ClipFetch';
-      const hero=document.querySelector('.hero .copy');
-      const tpl=document.getElementById('en').content.cloneNode(true);
-      hero.querySelector('.h1').replaceWith(tpl.querySelector('.h1'));
-      hero.querySelector('.sub').replaceWith(tpl.querySelector('.sub'));
-      window.scrollTo({top:0,behavior:'smooth'});
-    }
-  </script>
-
-  <!-- JSON-LD: FAQPage -->
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"Будет ли водяной знак?","acceptedAnswer":{"@type":"Answer","text":"Бот старается сохранять ролики без водяного знака. В редких случаях источник отдаёт только версии с водяным знаком — тогда выбирается лучший доступный вариант."}},
-      {"@type":"Question","name":"Какие есть ограничения Telegram?","acceptedAnswer":{"@type":"Answer","text":"Для отправки файлов бот укладывает размер видео/аудио в лимит Telegram. Если файл слишком большой, применяется аккуратное сжатие."}},
-      {"@type":"Question","name":"Законно ли это?","acceptedAnswer":{"@type":"Answer","text":"Используйте бота только для контента, на который у вас есть права. Уважайте авторов и лицензии платформ."}},
-      {"@type":"Question","name":"Бесплатно?","acceptedAnswer":{"@type":"Answer","text":"Да. Бот бесплатен для пользователей. Поддержать проект можно, поделившись ссылкой на бота."}},
-      {"@type":"Question","name":"Что означает «Авто (m4a/aac)»?","acceptedAnswer":{"@type":"Answer","text":"Бот берёт лучшую доступную аудиодорожку без перекодирования. Обычно это AAC в контейнере M4A. Если у источника нет AAC (например, выдаётся Opus/WEBM), итоговый файл может быть .webm."}},
-      {"@type":"Question","name":"Чем отличаются MP3 320 / 256 / 192 / 128 / 96?","acceptedAnswer":{"@type":"Answer","text":"Это битрейт MP3 (кбит/с). При выборе MP3 бот всегда перекодирует аудио под указанный битрейт. 320≈2.4 МБ/мин, 256≈1.9, 192≈1.4, 128≈1.0, 96≈0.7."}},
-      {"@type":"Question","name":"Что выбрать?","acceptedAnswer":{"@type":"Answer","text":"Быстро и без потерь — «Авто (m4a/aac)». Играть везде — MP3 192/256. Максимум качества — MP3 320. Экономия места — MP3 128/96."}},
-      {"@type":"Question","name":"Почему иногда приходит файл .webm?","acceptedAnswer":{"@type":"Answer","text":"У некоторых роликов оригинальная аудиодорожка — Opus в WEBM. Это не ошибка. Хотите MP3 — выберите любую кнопку MP3."}},
-      {"@type":"Question","name":"Меняется ли качество при «Авто»?","acceptedAnswer":{"@type":"Answer","text":"Нет. В «Авто» бот по возможности не перекодирует. При выборе MP3 идёт перекодирование под выбранный битрейт."}},
-      {"@type":"Question","name":"Поддерживаются ли плееры на телефоне?","acceptedAnswer":{"@type":"Answer","text":"Да. M4A (AAC) и MP3 воспроизводятся на iOS/Android/Windows/macOS и в Telegram."}}
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Законно ли это?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Используйте бот только для контента, который вы имеете право скачивать. Уважайте авторские права и правила платформ."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Какие есть ограничения Telegram?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Размер и способ отправки файла зависят от ограничений Telegram и доступного исходного медиа."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Почему иногда получается .webm?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Некоторые источники предоставляют аудио в Opus/WEBM. Это допустимый исходный формат."
+        }
+      }
     ]
   }
   </script>
-  <footer style="margin-top:40px; font-size:0.9em; text-align:center; color:#666;">
-  © 2025 ClipFetch Bot · 
-  <a href="/privacy.html" style="color:#666;">Политика конфиденциальности</a>
-</footer>
-
 </body>
 </html>
